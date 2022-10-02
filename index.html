@@ -30,6 +30,13 @@
 			  width: 1050px;
 			  vertical-align:top;
 			}
+			.question{
+			  text-align: center;
+			  width: 300px;
+			  margin-top: 5px;
+			  display: inline-block;
+			  vertical-align: top;
+			}
 		     </style>
 		  
                             </head>
@@ -55,8 +62,8 @@
 
             <div>		
             <form>			
-			<h3>Sample-1</h3> <audio preload="auto" id="audio-1" src="https://raw.githubusercontent.com/yen52205/music_content/master/pretrained_transformer_renamed/emo_1_song_219.mp3" controls></audio>
-			<fieldset id="arousal-1">
+			<h3>Sample-1</h3> <audio preload="auto" id="audio-1" src="https://raw.githubusercontent.com/yen52205/music_content/master/pretrained_transformer_renamed/emo_1_song_219.mp3" controls></audio>		
+			<div class="question"><fieldset id="arousal-1">
 			<legend>Arousal</legend>
 			<input type="radio" value=1 name="arousal-1">
 			<label for=1>1</label>
@@ -68,8 +75,8 @@
 			<label for=4>4</label>
 			<input type="radio" value=5 name="arousal-1">
 			<label for=5>5</label>
-			</fieldset>			
-			<fieldset id="valence-1">
+			</fieldset></div>
+			<div class="question"><fieldset id="valence-1">
 			<legend>Valence</legend>
 			<input type="radio" value=1 name="valence-1">
 			<label for=1>1</label>
@@ -81,8 +88,8 @@
 			<label for=4>4</label>
 			<input type="radio" value=5 name="valence-1">
 			<label for=5>5</label>
-			</fieldset>			
-			<fieldset id="humanness-1">
+			</fieldset></div>			
+			<div class="question"><fieldset id="humanness-1">
 			<legend>Humanness</legend>
 			<input type="radio" value=1 name="humanness-1">
 			<label for=1>1</label>
@@ -94,8 +101,8 @@
 			<label for=4>4</label>
 			<input type="radio" value=5 name="humanness-1">
 			<label for=5>5</label>
-			</fieldset>
-			<fieldset id="richness-1">
+			</fieldset></div>
+			<div class="question"><fieldset id="richness-1">
 			<legend>Richness</legend>
 			<input type="radio" value=1 name="richness-1">
 			<label for=1>1</label>
@@ -107,8 +114,8 @@
 			<label for=4>4</label>
 			<input type="radio" value=5 name="richness-1">
 			<label for=5>5</label>
-			</fieldset>			
-			<fieldset id="overall-1">
+			</fieldset></div>			
+			<div class="question"><fieldset id="overall-1">
 			<legend>Overall Music Quality</legend>
 			<input type="radio" value=1 name="overall-1">
 			<label for=1>1</label>
@@ -120,7 +127,7 @@
 			<label for=4>4</label>
 			<input type="radio" value=5 name="overall-1">
 			<label for=5>5</label>
-			</fieldset><br>		
+			</fieldset></div><br>		
 		
 			<h3>Sample-2</h3><audio preload="auto" id="audio-2" src="https://raw.githubusercontent.com/yen52205/music_content/master/0925_generated_songs_1200-2/emo_1_song_219.mp3" controls></audio>
 			<fieldset id="arousal-2">
