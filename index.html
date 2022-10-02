@@ -482,7 +482,7 @@
 			document.getElementById("audio-5").src = audio_5;
 			
 			function updateAudio(){
-			    if (page_idx<5){
+			    if (page_idx<12){
 				    page_idx += 1;
 			        audio_1 = model_folder[0]+audio_name[page_idx];
 			        audio_2 = model_folder[1]+audio_name[page_idx];
@@ -497,6 +497,7 @@
 					alert('更換mp3, page_idx = '+page_idx);
 				}else{
 				    page_idx = 0;
+					alert('跳轉儲存, page_idx = '+page_idx);
 				}
 			
 			}
