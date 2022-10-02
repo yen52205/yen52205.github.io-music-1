@@ -356,7 +356,6 @@
             <div class="top2">
 			<fieldset id="sample5">
 			<legend>Sample-5</legend>
-			<p id="p5">Hello World!</p>
             <div class="top">
 			<h3><audio preload="auto" id="audio-5" src="https://raw.githubusercontent.com/yen52205/music_content/master/model_25_renamed/emo_1_song_219.mp3" controls></audio></h3> 
 			</div><div class="question"><fieldset id="arousal-5">
@@ -476,7 +475,10 @@
 			var audio_4 = model_folder[3]+audio_name[3];
 			var audio_5 = model_folder[4]+audio_name[4];
 			
+			document.getElementById("audio-1").src = audio_1;
+			document.getElementById("audio-2").src = audio_2;
+			document.getElementById("audio-3").src = audio_3;			
+			document.getElementById("audio-4").src = audio_4;
 			document.getElementById("audio-5").src = audio_5;
-			document.getElementById("p5").innerHTML = audio_5;
 			</script>
 </html>
