@@ -30,6 +30,13 @@
 			  width: 1050px;
 			  vertical-align:top;
 			}
+		    .top2{
+			  border: 1px outset black;
+			  text-align: center;
+			  margin-top: 5px;
+			  width: 1050px;
+			  vertical-align:top;
+			}
 			.question{
 			  text-align: center;
 			  width: 250px;
@@ -62,8 +69,9 @@
 
             <div>		
             <form>
+			<div class="top2">
             <div class="top">			
-			<h3>Sample-1</h3> <audio preload="auto" id="audio-1" src="https://raw.githubusercontent.com/yen52205/music_content/master/pretrained_transformer_renamed/emo_1_song_219.mp3" controls></audio>		
+			<h3>Sample-1: <audio preload="auto" id="audio-1" src="https://raw.githubusercontent.com/yen52205/music_content/master/pretrained_transformer_renamed/emo_1_song_219.mp3" controls></audio>	</h3> 	
 			</div><div class="question"><fieldset id="arousal-1">
 			<legend>Arousal</legend>
 			<input type="radio" value=1 name="arousal-1">
@@ -128,10 +136,11 @@
 			<label for=4>4</label>
 			<input type="radio" value=5 name="overall-1">
 			<label for=5>5</label>
-			</fieldset></div><br>		
+			</fieldset></div></div><br>		
 		
+		    <div class="top2">
 		    <div class="top">
-			<h3>Sample-2</h3><audio preload="auto" id="audio-2" src="https://raw.githubusercontent.com/yen52205/music_content/master/0925_generated_songs_1200-2/emo_1_song_219.mp3" controls></audio>
+			<h3>Sample-2: <audio preload="auto" id="audio-2" src="https://raw.githubusercontent.com/yen52205/music_content/master/0925_generated_songs_1200-2/emo_1_song_219.mp3" controls></audio></h3>
 			</div><div class="question"><fieldset id="arousal-2">
 			<legend>Arousal</legend>
 			<input type="radio" value=1 name="arousal-2">
@@ -196,10 +205,11 @@
 			<label for=4>4</label>
 			<input type="radio" value=5 name="overall-2">
 			<label for=5>5</label>
-			</fieldset></div><br>
+			</fieldset></div></div><br>
 
+            <div class="top2">
             <div class="top">
-			<h3>Sample-3</h3> <audio preload="auto" id="audio-3" src="https://raw.githubusercontent.com/yen52205/music_content/master/model_8_renamed/emo_1_song_219.mp3" controls></audio>
+			<h3>Sample-3: <audio preload="auto" id="audio-3" src="https://raw.githubusercontent.com/yen52205/music_content/master/model_8_renamed/emo_1_song_219.mp3" controls></audio></h3> 
 			</div><div class="question"><fieldset id="arousal-3">
 			<legend>Arousal</legend>
 			<input type="radio" value=1 name="arousal-3">
@@ -264,10 +274,11 @@
 			<label for=4>4</label>
 			<input type="radio" value=5 name="overall-3">
 			<label for=5>5</label>
-			</fieldset></div><br>			
+			</fieldset></div></div><br>			
 
+            <div class="top2">
             <div class="top">
-			<h3>Sample-4</h3> <audio preload="auto" id="audio-4" src="https://raw.githubusercontent.com/yen52205/music_content/master/model_3_renamed/emo_1_song_219.mp3" controls></audio>
+			<h3>Sample-4: <audio preload="auto" id="audio-4" src="https://raw.githubusercontent.com/yen52205/music_content/master/model_3_renamed/emo_1_song_219.mp3" controls></audio></h3> 
 			</div><div class="question"><fieldset id="arousal-4">
 			<legend>Arousal</legend>
 			<input type="radio" value=1 name="arousal-4">
@@ -332,10 +343,11 @@
 			<label for=4>4</label>
 			<input type="radio" value=5 name="overall-4">
 			<label for=5>5</label>
-			</fieldset></div><br>
+			</fieldset></div></div><br>
 
+            <div class="top2">
             <div class="top">
-			<h3>Sample-5</h3> <audio preload="auto" id="audio-5" src="https://raw.githubusercontent.com/yen52205/music_content/master/model_25_renamed/emo_1_song_219.mp3" controls></audio>
+			<h3>Sample-5: <audio preload="auto" id="audio-5" src="https://raw.githubusercontent.com/yen52205/music_content/master/model_25_renamed/emo_1_song_219.mp3" controls></audio></h3> 
 			</div><div class="question"><fieldset id="arousal-5">
 			<legend>Arousal</legend>
 			<input type="radio" value=1 name="arousal-5">
@@ -400,7 +412,7 @@
 			<label for=4>4</label>
 			<input type="radio" value=5 name="overall-5">
 			<label for=5>5</label>
-			</fieldset></div><br>			
+			</fieldset></div></div><br>			
 
             <input type="button" onclick="alert('儲存資料與更換mp3/跳轉頁面')" value="確認送出">			
             <button onclick="display(1)">1</button>
