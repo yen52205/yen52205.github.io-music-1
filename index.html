@@ -3,16 +3,19 @@
           <head>
 	<script type="text/javascript" src="test.js"></script>
                       <meta charset="utf-8">
-                          <title>Hello，GitHub</title>
+                          <title>情緒符號生成音樂客觀評比問卷</title>
                             </head>
                               <body>
-                               <h1>welcome world!</h1>
-			       <h2>hello, hello, and hello</h2>
+                               <h1>您好，感謝在百忙之中撥冗參加測試。</h1>
                         <table class="audio-table">
 				<tbody>
-				<tr>
-				<td><button onclick="display(1)">1</button></td>
-				</tr>
+				<tr>每次測試會出現五首鋼琴音樂，請在確實聽完每首音樂後，並完成下方問題。</tr>
+				<tr><td>Arousal:</td><td>情緒激動程度(1是最低，5是最高)</td></tr>
+				<tr><td>Valence:</td><td>情緒正負面(1是越負面，5是越正面)</td></tr>
+				<tr><td>Humanness:</td><td>音樂是否像人演奏的(1是越不像，5是越像)</td></tr>
+				<tr><td>Richness:</td><td>音樂內容有趣程度(1是越無趣，5是越有趣)</td></tr>				
+				<tr><td>Overall Music Quality:</td><td>整體而言的音樂品質(1是越差，5是越佳)</td></tr>
+                <tr><td>valence-arousal參考圖:</td><td><img src="4Q.jpg" alt="Valence-Arousal"></td></tr>				
 				<tr>
 				<td><h5>sample-1</h5></td> <td><h5>sample-2</h5></td> <td><h5>sample-3</h5></td> <td><h5>sample-4</h5></td> <td><h5>sample-5</h5></td> 
 				</tr>
@@ -105,7 +108,7 @@
 			
 			
             <input type="button" onclick="alert('儲存資料與更換mp3/跳轉頁面')" value="確認送出">			
-
+            <button onclick="display(1)">1</button>
 	
 </body>
 </html>
