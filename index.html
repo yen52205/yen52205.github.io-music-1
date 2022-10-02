@@ -483,6 +483,7 @@
 			
 			function updateAudio(){
 			    if (page_idx<11){
+					alert('更換mp3，原本='+ audio_name[page_idx]+' page_idx = '+page_idx);
 				    page_idx += 1;
 			        audio_1 = model_folder[0]+audio_name[page_idx];
 			        audio_2 = model_folder[1]+audio_name[page_idx];
@@ -494,11 +495,13 @@
 					document.getElementById("audio-3").src = audio_3;			
 					document.getElementById("audio-4").src = audio_4;
 					document.getElementById("audio-5").src = audio_5;
-					alert('更換mp3='+ audio_name[page_idx]+' page_idx = '+page_idx);
+					if (page_idx==11){
+					    document.getElementById("send").value = "最後一組，確認送出";
+					}
 				}else{
-				    page_idx = 0;
 					alert('跳轉儲存, page_idx = '+page_idx);
-					document.getElementById("send").value = "最後一組，確認送出";
+					document.getElementById("send").value = "下一組";
+				    page_idx = 0;
 				}
 			
 			}
