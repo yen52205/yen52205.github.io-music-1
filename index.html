@@ -425,7 +425,7 @@
 			</fieldset></div></fieldset></div><br>			
 
             <div class="top">
-            <input width=200 height=100 type="button" onclick="alert('儲存資料與更換mp3/跳轉頁面')" value="確認送出">		
+            <input width=200 height=100 type="button" onclick=updateAudio() value="確認送出">		
             </div>			
             <button onclick="display(1)">1</button>
 			
@@ -480,5 +480,25 @@
 			document.getElementById("audio-3").src = audio_3;			
 			document.getElementById("audio-4").src = audio_4;
 			document.getElementById("audio-5").src = audio_5;
+			
+			function updateAudio(){
+			    if (page_idx<5){
+				    page_idx += 1;
+			        audio_1 = model_folder[0]+audio_name[page_idx];
+			        audio_2 = model_folder[1]+audio_name[page_idx];
+			        audio_3 = model_folder[2]+audio_name[page_idx];
+			        audio_4 = model_folder[3]+audio_name[page_idx];
+			        audio_5 = model_folder[4]+audio_name[page_idx];
+					document.getElementById("audio-1").src = audio_1;
+					document.getElementById("audio-2").src = audio_2;
+					document.getElementById("audio-3").src = audio_3;			
+					document.getElementById("audio-4").src = audio_4;
+					document.getElementById("audio-5").src = audio_5;
+					alert('更換mp3, page_idx = '+page_idx);
+				}else{
+				    page_idx = 0;
+				}
+			
+			}
 			</script>
 </html>
