@@ -358,27 +358,6 @@
 			
 
 			
-			let data = 
-				'\r Name: ' ;
-			
-			// Convert the text to BLOB.
-			const textToBLOB = new Blob([data], { type: 'text/plain' });
-			const sFileName = 'formData.txt';	   // The file to save the data.
-
-			let newLink = document.createElement("a");
-			newLink.download = sFileName;
-
-			if (window.webkitURL != null) {
-				newLink.href = window.webkitURL.createObjectURL(textToBLOB);
-			}
-			else {
-				newLink.href = window.URL.createObjectURL(textToBLOB);
-				newLink.style.display = "none";
-				document.body.appendChild(newLink);
-			}
-
-			newLink.click(); 
-			
 			function updateAudio(){
 			    if (page_idx<11){
 					alert('更換mp3，原本='+ audio_name[page_idx]+' page_idx = '+page_idx);
