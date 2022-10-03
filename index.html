@@ -311,9 +311,7 @@
             <div class="top">
             <input width=200 height=100 type="button" id="send" onclick=updateAudio() value="下一組">		
             </div>			
-            <button onclick="display(1)">1</button>
-			
-			<p id="store_content1">show store content here.</p>
+
 			
 	        </div>
 </body>
@@ -381,7 +379,6 @@
 				  var hh = 'input[name="'+query_name[2]+'"]:checked';
 				  var rr = 'input[name="'+query_name[3]+'"]:checked';
 				  var oo = 'input[name="'+query_name[4]+'"]:checked';
-				  document.getElementById("store_content1").innerHTML = aa;
 				  try{
 					var a = document.querySelector(aa).value;
 					var v = document.querySelector(vv).value;
@@ -428,8 +425,8 @@
 			function updateAudio(){
 				var flag = storeContent();
 				if (flag==true){
-					if (page_idx<1){ //idx<11
-						alert('剩餘'+(1-page_idx)+'頁；mp3已更換，請繼續回答......');
+					if (page_idx<2){ //idx<11
+						alert('剩餘'+(2-page_idx)+'頁；mp3已更換，請繼續回答......');
 						page_idx += 1;
 						audio_1 = model_folder[0]+audio_name[page_idx];
 						audio_2 = model_folder[1]+audio_name[page_idx];
@@ -441,10 +438,9 @@
 						document.getElementById("audio-3").src = audio_3;			
 						document.getElementById("audio-4").src = audio_4;
 						document.getElementById("audio-5").src = audio_5;
-						if (page_idx==1){ //idx==11
+						if (page_idx==2){ //idx==11
 							document.getElementById("send").value = "最後一組，確認送出";
 						}
-						document.getElementById("store_content1").innerHTML = answer_str;
 					}else{
 						end();
 						page_idx = 0;
