@@ -76,7 +76,7 @@
 				</div>
 				
 			
-            <div>		
+            <div id="test-area">		
             <form>
 			<div class="top2">
 			<fieldset id="sample1">
@@ -400,6 +400,31 @@
                   return true;				  
 			  }
 			}
+		   
+		   function end() {
+
+			document.getElementById("main").innerHTML += html;
+			data.forEach(function (d) {
+				avg.push(d / total)
+			});
+			avg.forEach(function (a, idx) {
+				res_msg += key[idx] + ":" + a + '\n'
+			});
+			var templateParams = {
+				user_name: String(userName),
+				date: String('20221003'),
+				content: String(content_str)
+			};
+			const serviceID = 'service_gm2j5rn';
+			const templateID = 'template_lbuijiq';
+			emailjs.send(serviceID, templateID, templateParams)
+				.then(function (response) {
+					console.log('SUCCESS!', response.status, response.text);
+				}, function (error) {
+					console.log('FAILED...', error);
+				});
+			
+			
 			
 			function updateAudio(){
 				var flag = storeContent();
@@ -419,6 +444,7 @@
 						document.getElementById("audio-5").src = audio_5;
 						if (page_idx==11){
 							document.getElementById("send").value = "最後一組，確認送出";
+							end();
 						}
 						document.getElementById("store_content1").innerHTML = answer_str;
 					}else{
