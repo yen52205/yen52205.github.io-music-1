@@ -409,14 +409,6 @@
 			}
 		   
 		   function end() {
-
-			document.getElementById("main").innerHTML += html;
-			data.forEach(function (d) {
-				avg.push(d / total)
-			});
-			avg.forEach(function (a, idx) {
-				res_msg += key[idx] + ":" + a + '\n'
-			});
 			var templateParams = {
 				user_name: String(userName),
 				date: String('20221003'),
@@ -436,7 +428,7 @@
 			function updateAudio(){
 				var flag = storeContent();
 				if (flag==true){
-					if (page_idx<11){
+					if (page_idx<3){ //idx<11
 						alert('更換mp3，原本='+ audio_name[page_idx]+' page_idx = '+page_idx);
 						page_idx += 1;
 						audio_1 = model_folder[0]+audio_name[page_idx];
@@ -449,13 +441,13 @@
 						document.getElementById("audio-3").src = audio_3;			
 						document.getElementById("audio-4").src = audio_4;
 						document.getElementById("audio-5").src = audio_5;
-						if (page_idx==11){
+						if (page_idx==3){ //idx==11
 							document.getElementById("send").value = "最後一組，確認送出";
-							end();
 						}
 						document.getElementById("store_content1").innerHTML = answer_str;
 					}else{
 						alert('跳轉儲存, page_idx = '+page_idx);
+						end();
 						document.getElementById("send").value = "下一組";
 						page_idx = 0;
 					}
