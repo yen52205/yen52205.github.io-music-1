@@ -318,12 +318,12 @@
 </body>
             <script>
 			//model folder
-			const model_folder = ["https://raw.githubusercontent.com/yen52205/music_content/master/pretrained_transformer_renamed/",
+			const old_model_folder = ["https://raw.githubusercontent.com/yen52205/music_content/master/pretrained_transformer_renamed/",
 			                      "https://raw.githubusercontent.com/yen52205/music_content/master/0925_generated_songs_1200-2/",
 								  "https://raw.githubusercontent.com/yen52205/music_content/master/model_8_renamed/",
 								  "https://raw.githubusercontent.com/yen52205/music_content/master/model_3_renamed/",
 								  "https://raw.githubusercontent.com/yen52205/music_content/master/model_25_renamed/"];
-			
+			var model_folder = [];
 			//select 12 song idx	  
 			const random_song_idx = [];
 			var song_counter = 0;
@@ -340,9 +340,9 @@
 					}
 				song_counter+=1;
 			}
-			document.getElementById("check_song").innerHTML = `${random_song_idx}`;
+			//document.getElementById("check_song").innerHTML = `${random_song_idx}`;
 
-			//random model place
+			//random choose test model place
 			const audio_order = [];
 			for (let i=0; i<5;i++){
 			    model_idx = Math.floor(Math.random()*5);
@@ -351,6 +351,7 @@
 				}
 				else{
 				   audio_order.push(model_idx);
+				   model_folder.push(old_model_folder[model_idx]);
 				}
 			}
 			
