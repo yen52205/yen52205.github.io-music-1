@@ -344,7 +344,8 @@
 
 			//random choose test model place
 			const audio_order = [];
-			for (let i=0; i<5;i++){
+			var mcounter = 0;
+			while(mcounter<5){
 			    model_idx = Math.floor(Math.random()*5);
 				if (audio_order.includes(model_idx)==true){
 						continue;
@@ -352,9 +353,10 @@
 				else{
 				   audio_order.push(model_idx);
 				   model_folder.push(old_model_folder[model_idx]);
+				   mcounter+=1;
 				}
 			}
-			document.getElementById("check_song").innerHTML = `${model_folder}_${model_idx}`;
+			document.getElementById("check_song").innerHTML = `${model_folder}_${audio_order}`;
 			
 			//complete audio name for audio display
 			const audio_name = [];
