@@ -354,6 +354,7 @@
 				   model_folder.push(old_model_folder[model_idx]);
 				}
 			}
+			document.getElementById("check_song").innerHTML = `${model_folder}_${model_idx}`;
 			
 			//complete audio name for audio display
 			const audio_name = [];
@@ -420,9 +421,17 @@
 		   
 		   //end the test and send email
 		   function end() {
+		   const d = new Date();
+           var year = d.getFullYear();
+		   var month = d.getMonth();
+		   var day = d.getDate();
+		   var hours = d.getHours();
+		   var mins = d.getMinutes();
+		   var timestr = `${year}${month}${day}_${hours}${mins}`;
+		   
 			var templateParams = {
 				user_name: String(userName),
-				date: String('20221003'),
+				date: String(timestr),
 				content: String(answer_str)
 			};
 			const serviceID = 'service_gm2j5rn';
