@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+          <head>
+	<script type="text/javascript" src="test.js"></script>
+	<script
+	  type="text/javascript"
+	  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+	</script>
+	<script type="text/javascript">
+	  (function () {
+		emailjs.init('5zUHPTFpXOmSM2Eww');
+	  })();
+	</script>
+                     <meta charset="utf-8">
+                          <title>情緒符號生成音樂主觀評比問卷</title>
+		     <style>
+			.left {
+			  border: 1px outset red;
+			  text-align: center;
+			  margin-top: 10px;
+			  display: inline-block;
+			  width:600px;
+			  height:550px;
+			  vertical-align: top;
+			}
+			.right{
+			  border: 1px outset red;
+			  text-align: center;
+			  margin-top: 10px;
+		      margin-left: 70px;
+			  display: inline-block;
+			  width:600px;
+			  height:550px;
+			  vertical-align: top;
+			     }
+		    .top{
+			  text-align: center;
+			  margin-top: 5px;
+			  width: 1270px;
+			  vertical-align:top;
+			}
+		    .top2{
+			  text-align: center;
+			  margin-top: 10px;
+			  width: 1270px;
+			  vertical-align:top;
+			}
+			.question{
+			  text-align: center;
+			  width: 230px;
+			  margin-top: 5px;
+			  margin-left: 5px;
+			  display: inline-block;
+			  vertical-align: top;
+			}
+		     </style>
+		  
+                            </head>
+                              <body>
+				<tbody>
+				<div class="top">
+				<h3>情緒符號音樂生成主觀評比問卷</h3>
+				</div>
+				<div class="left">
+				<h4>您好，感謝在百忙之中撥冗參加測試。</h4>
+				<h5>每頁測試會出現五首鋼琴音樂，請在確實聽完每首音樂後，並完成下方問題。</h5><br>
+				<h5>Arousal:情緒激動程度(1是最低，5是最高)</h5><br>
+				<h5>Valence:情緒正負面(1是越負面，5是越正面)</h5><br>
+				<h5>Humanness:音樂是否像人演奏的(1是越不像，5是越像)</h5><br>
+				<h5>Richness:音樂內容有趣程度(1是越無趣，5是越有趣)</h5><br>	
+				<h5>Overall Music Quality:整體而言的音樂品質(1是越差，5是越佳)</h5><br>
+				</div>
+				<div class="right" >
+                		<h4>valence-arousal參考圖:</h4><br>
+				<img style='height: 80%; width: 80%; object-fit: contain' src="https://github.com/yen52205/yen52205.github.io-music-1/blob/master/.assets/4Q.png?raw=true" alt="Valence-Arousal">				
+				</div>
+				
+			
+            <div id="test-area">		
+            <form>
+			<div class="top2">
+			<fieldset id="sample1">
+			<legend>Sample-1</legend>
+            <div class="top">			
+			<h3><audio preload="auto" id="audio-1" src="https://raw.githubusercontent.com/yen52205/music_content/master/pretrained_transformer_renamed/emo_1_song_219.mp3" controls>Loading...</audio>	</h3> 	
+			</div><div class="question"><fieldset id="arousal1">
+			<legend>Arousal</legend>
+			<label><input type="radio" value=1 name="arousal-1">1</label>
+			<label><input type="radio" value=2 name="arousal-1">2</label>
+			<label><input type="radio" value=3 name="arousal-1">3</label>
+			<label><input type="radio" value=4 name="arousal-1">4</label>
+			<label><input type="radio" value=5 name="arousal-1">5</label>
+			</fieldset></div>
+			<div class="question"><fieldset id="valence1">
+			<legend>Valence</legend>
+			<label><input type="radio" value=1 name="valence-1">1</label>
+			<label><input type="radio" value=2 name="valence-1">2</label>
+			<label><input type="radio" value=3 name="valence-1">3</label>
+			<label><input type="radio" value=4 name="valence-1">4</label>
+			<label><input type="radio" value=5 name="valence-1">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="humanness1">
+			<legend>Humanness</legend>
+			<label><input type="radio" value=1 name="humanness-1">1</label>
+			<label><input type="radio" value=2 name="humanness-1">2</label>
+			<label><input type="radio" value=3 name="humanness-1">3</label>
+			<label><input type="radio" value=4 name="humanness-1">4</label>
+			<label><input type="radio" value=5 name="humanness-1">5</label>
+			</fieldset></div>
+			<div class="question"><fieldset id="richness1">
+			<legend>Richness</legend>
+			<label><input type="radio" value=1 name="richness-1">1</label>
+			<label><input type="radio" value=2 name="richness-1">2</label>
+			<label><input type="radio" value=3 name="richness-1">3</label>
+			<label><input type="radio" value=4 name="richness-1">4</label>
+			<label><input type="radio" value=5 name="richness-1">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="overall1">
+			<legend>Overall Music Quality</legend>
+			<label><input type="radio" value=1 name="overall-1">1</label>
+			<label><input type="radio" value=2 name="overall-1">2</label>
+			<label><input type="radio" value=3 name="overall-1">3</label>
+			<label><input type="radio" value=4 name="overall-1">4</label>
+			<label><input type="radio" value=5 name="overall-1">5</label>
+			</fieldset></div></fieldset></div><br>		
+		
+		    <div class="top2">
+			<fieldset id="sample2">
+			<legend>Sample-2</legend>
+		    <div class="top">
+			<h3><audio preload="auto" id="audio-2" src="https://raw.githubusercontent.com/yen52205/music_content/master/0925_generated_songs_1200-2/emo_1_song_219.mp3" controls>Loading...</audio></h3>
+			</div><div class="question"><fieldset id="arousal2">
+			<legend>Arousal</legend>
+			<label><input type="radio" value=1 name="arousal-2">1</label>
+			<label><input type="radio" value=2 name="arousal-2">2</label>
+			<label><input type="radio" value=3 name="arousal-2">3</label>
+			<label><input type="radio" value=4 name="arousal-2">4</label>
+			<label><input type="radio" value=5 name="arousal-2">5</label>
+			</fieldset></div>		
+			<div class="question"><fieldset id="valence2">
+			<legend>Valence</legend>
+			<label><input type="radio" value=1 name="valence-2">1</label>
+			<label><input type="radio" value=2 name="valence-2">2</label>
+			<label><input type="radio" value=3 name="valence-2">3</label>
+			<label><input type="radio" value=4 name="valence-2">4</label>
+			<label><input type="radio" value=5 name="valence-2">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="humanness2">
+			<legend>Humanness</legend>
+			<label><input type="radio" value=1 name="humanness-2">1</label>
+			<label><input type="radio" value=2 name="humanness-2">2</label>
+			<label><input type="radio" value=3 name="humanness-2">3</label>
+			<label><input type="radio" value=4 name="humanness-2">4</label>
+			<label><input type="radio" value=5 name="humanness-2">5</label>
+			</fieldset></div>
+			<div class="question"><fieldset id="richness2">
+			<legend>Richness</legend>
+			<label><input type="radio" value=1 name="richness-2">1</label>
+			<label><input type="radio" value=2 name="richness-2">2</label>
+			<label><input type="radio" value=3 name="richness-2">3</label>
+			<label><input type="radio" value=4 name="richness-2">4</label>
+			<label><input type="radio" value=5 name="richness-2">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="overall2">
+			<legend>Overall Music Quality</legend>
+			<label><input type="radio" value=1 name="overall-2">1</label>
+			<label><input type="radio" value=2 name="overall-2">2</label>
+			<label><input type="radio" value=3 name="overall-2">3</label>
+			<label><input type="radio" value=4 name="overall-2">4</label>
+			<label><input type="radio" value=5 name="overall-2">5</label>
+			</fieldset></div></fieldset></div><br>
+
+            <div class="top2">
+			<fieldset id="sample3">
+			<legend>Sample-3</legend>
+            <div class="top">
+			<h3><audio preload="auto" id="audio-3" src="https://raw.githubusercontent.com/yen52205/music_content/master/model_8_renamed/emo_1_song_219.mp3" controls>Loading...</audio></h3> 
+			</div><div class="question"><fieldset id="arousal3">
+			<legend>Arousal</legend>
+			<label><input type="radio" value=1 name="arousal-3">1</label>
+			<label><input type="radio" value=2 name="arousal-3">2</label>
+			<label><input type="radio" value=3 name="arousal-3">3</label>
+			<label><input type="radio" value=4 name="arousal-3">4</label>
+			<label><input type="radio" value=5 name="arousal-3">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="valence3">
+			<legend>Valence</legend>
+			<label><input type="radio" value=1 name="valence-3">1</label>
+			<label><input type="radio" value=2 name="valence-3">2</label>
+			<label><input type="radio" value=3 name="valence-3">3</label>
+			<label><input type="radio" value=4 name="valence-3">4</label>
+			<label><input type="radio" value=5 name="valence-3">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="humanness3">
+			<legend>Humanness</legend>
+			<label><input type="radio" value=1 name="humanness-3">1</label>
+			<label><input type="radio" value=2 name="humanness-3">2</label>
+			<label><input type="radio" value=3 name="humanness-3">3</label>
+			<label><input type="radio" value=4 name="humanness-3">4</label>
+			<label><input type="radio" value=5 name="humanness-3">5</label>
+			</fieldset></div>
+			<div class="question"><fieldset id="richness3">
+			<legend>Richness</legend>
+			<label><input type="radio" value=1 name="richness-3">1</label>
+			<label><input type="radio" value=2 name="richness-3">2</label>
+			<label><input type="radio" value=3 name="richness-3">3</label>
+			<label><input type="radio" value=4 name="richness-3">4</label>
+			<label><input type="radio" value=5 name="richness-3">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="overall3">
+			<legend>Overall Music Quality</legend>
+			<label><input type="radio" value=1 name="overall-3">1</label>
+			<label><input type="radio" value=2 name="overall-3">2</label>
+			<label><input type="radio" value=3 name="overall-3">3</label>
+			<label><input type="radio" value=4 name="overall-3">4</label>
+			<label><input type="radio" value=5 name="overall-3">5</label>
+			</fieldset></div></fieldset></div><br>			
+
+            <div class="top2">
+			<fieldset id="sample4">
+			<legend>Sample-4</legend>
+            <div class="top">
+			<h3><audio preload="auto" id="audio-4" src="https://raw.githubusercontent.com/yen52205/music_content/master/model_3_renamed/emo_1_song_219.mp3" controls>Loading...</audio></h3> 
+			</div><div class="question"><fieldset id="arousal4">
+			<legend>Arousal</legend>
+			<label><input type="radio" value=1 name="arousal-4">1</label>
+			<label><input type="radio" value=2 name="arousal-4">2</label>
+			<label><input type="radio" value=3 name="arousal-4">3</label>
+			<label><input type="radio" value=4 name="arousal-4">4</label>
+			<label><input type="radio" value=5 name="arousal-4">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="valence4">
+			<legend>Valence</legend>
+			<label><input type="radio" value=1 name="valence-4">1</label>
+			<label><input type="radio" value=2 name="valence-4">2</label>
+			<label><input type="radio" value=3 name="valence-4">3</label>
+			<label><input type="radio" value=4 name="valence-4">4</label>
+			<label><input type="radio" value=5 name="valence-4">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="humanness4">
+			<legend>Humanness</legend>
+			<label><input type="radio" value=1 name="humanness-4">1</label>
+			<label><input type="radio" value=2 name="humanness-4">2</label>
+			<label><input type="radio" value=3 name="humanness-4">3</label>
+			<label><input type="radio" value=4 name="humanness-4">4</label>
+			<label><input type="radio" value=5 name="humanness-4">5</label>
+			</fieldset></div>
+			<div class="question"><fieldset id="richness4">
+			<legend>Richness</legend>
+			<label><input type="radio" value=1 name="richness-4">1</label>
+			<label><input type="radio" value=2 name="richness-4">2</label>
+			<label><input type="radio" value=3 name="richness-4">3</label>
+			<label><input type="radio" value=4 name="richness-4">4</label>
+			<label><input type="radio" value=5 name="richness-4">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="overall4">
+			<legend>Overall Music Quality</legend>
+			<label><input type="radio" value=1 name="overall-4">1</label>
+			<label><input type="radio" value=2 name="overall-4">2</label>
+			<label><input type="radio" value=3 name="overall-4">3</label>
+			<label><input type="radio" value=4 name="overall-4">4</label>
+			<label><input type="radio" value=5 name="overall-4">5</label>
+			</fieldset></div></fieldset></div><br>
+
+            <div class="top2">
+			<fieldset id="sample5">
+			<legend>Sample-5</legend>
+            <div class="top">
+			<h3><audio preload="auto" id="audio-5" src="https://raw.githubusercontent.com/yen52205/music_content/master/model_25_renamed/emo_1_song_219.mp3" controls>Loading...</audio></h3> 
+			</div><div class="question"><fieldset id="arousal5">
+			<legend>Arousal</legend>
+			<label><input type="radio" value=1 name="arousal-5">1</label>
+			<label><input type="radio" value=2 name="arousal-5">2</label>
+			<label><input type="radio" value=3 name="arousal-5">3</label>
+			<label><input type="radio" value=4 name="arousal-5">4</label>
+			<label><input type="radio" value=5 name="arousal-5">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="valence5">
+			<legend>Valence</legend>
+			<label><input type="radio" value=1 name="valence-5">1</label>
+			<label><input type="radio" value=2 name="valence-5">2</label>
+			<label><input type="radio" value=3 name="valence-5">3</label>
+			<label><input type="radio" value=4 name="valence-5">4</label>
+			<label><input type="radio" value=5 name="valence-5">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="humanness5">
+			<legend>Humanness</legend>
+			<label><input type="radio" value=1 name="humanness-5">1</label>
+			<label><input type="radio" value=2 name="humanness-5">2</label>
+			<label><input type="radio" value=3 name="humanness-5">3</label>
+			<label><input type="radio" value=4 name="humanness-5">4</label>
+			<label><input type="radio" value=5 name="humanness-5">5</label>
+			</fieldset></div>
+			<div class="question"><fieldset id="richness5">
+			<legend>Richness</legend>
+			<label><input type="radio" value=1 name="richness-5">1</label>
+			<label><input type="radio" value=2 name="richness-5">2</label>
+			<label><input type="radio" value=3 name="richness-5">3</label>
+			<label><input type="radio" value=4 name="richness-5">4</label>
+			<label><input type="radio" value=5 name="richness-5">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="overall5">
+			<legend>Overall Music Quality</legend>
+			<label><input type="radio" value=1 name="overall-5">1</label>
+			<label><input type="radio" value=2 name="overall-5">2</label>
+			<label><input type="radio" value=3 name="overall-5">3</label>
+			<label><input type="radio" value=4 name="overall-5">4</label>
+			<label><input type="radio" value=5 name="overall-5">5</label>
+			</fieldset></div></fieldset></div><br>			
+
+            <div class="top">
+            <input width=200 height=100 type="button" id="send" onclick=updateAudio() value="下一組">	
+            <p id="check_song">check song area</p>			
+            </div>			
+
+			
+	        </div>
+</body>
+            <script>
+			//model folder
+			const old_model_folder = ["https://raw.githubusercontent.com/yen52205/music_content/master/pretrained_transformer_renamed/",
+			                      "https://raw.githubusercontent.com/yen52205/music_content/master/0925_generated_songs_1200-2/",
+								  "https://raw.githubusercontent.com/yen52205/music_content/master/model_8_renamed/",
+								  "https://raw.githubusercontent.com/yen52205/music_content/master/model_3_renamed/",
+								  "https://raw.githubusercontent.com/yen52205/music_content/master/model_25_renamed/"];
+			var model_folder = [];
+			//select 12 song idx	  
+			const random_song_idx = [];
+			var song_counter = 0;
+			while(song_counter<3){
+				    random_idx = Math.floor(Math.random()*240)+1;
+					random_choice = (4*random_idx-1);
+					if (random_song_idx.includes(random_choice)==true){
+					    continue;
+					}else{
+					    random_song_idx.push(random_choice);
+						random_song_idx.push(random_choice+1);
+						random_song_idx.push(random_choice+2);
+						random_song_idx.push(random_choice+3);
+					}
+				song_counter+=1;
+			}
+			//document.getElementById("check_song").innerHTML = `${random_song_idx}`;
+
+			//random choose test model place
+			let numbers = [0, 1, 2, 3, 4];
+			let shuffledNumbers = numbers.sort(function () {
+			  return Math.random() - 0.5;
+			});
+			for (let i=0;i<5;i++){
+			    model_folder.push(old_model_folder[shuffledNumbers[i]]);
+			}
+			document.getElementById("check_song").innerHTML = `${model_folder}`;
+			
+			//complete audio name for audio display
+			const audio_name = [];
+			var emo = 0;
+			for (let i=0;i<12;i++){
+			   emo = (random_song_idx[i]+1)%4+1;
+			   audio_name.push('emo_'+emo+'_song_'+random_song_idx[i]+'.mp3');
+			}
+			
+			var page_idx = 0;
+			var audio_1 = model_folder[0]+audio_name[page_idx];
+			var audio_2 = model_folder[1]+audio_name[page_idx];
+			var audio_3 = model_folder[2]+audio_name[page_idx];
+			var audio_4 = model_folder[3]+audio_name[page_idx];
+			var audio_5 = model_folder[4]+audio_name[page_idx];
+			
+			document.getElementById("audio-1").src = audio_1;
+			document.getElementById("audio-2").src = audio_2;
+			document.getElementById("audio-3").src = audio_3;			
+			document.getElementById("audio-4").src = audio_4;
+			document.getElementById("audio-5").src = audio_5;
+			
+			//store user choice into string
+			var userName = "default";
+			var answer_str= userName + "," + "audioName,arousal,valence,humanness,richness,overall,";
+			
+			function storeContent(){
+			  var tmp_str = "";
+			  var audio_files = [audio_1,audio_2,audio_3,audio_4,audio_5];
+			  var checked_list = [];
+			  for (let i=1; i<6;i++){ 
+			      var query_name = ["arousal-"+i,"valence-"+i,"humanness-"+i,"richness-"+i,"overall-"+i]
+				  var audio_path = audio_files[i-1];
+				  var aa = 'input[name="'+query_name[0]+'"]:checked';
+				  var vv = 'input[name="'+query_name[1]+'"]:checked';
+				  var hh = 'input[name="'+query_name[2]+'"]:checked';
+				  var rr = 'input[name="'+query_name[3]+'"]:checked';
+				  var oo = 'input[name="'+query_name[4]+'"]:checked';
+				  try{
+					var a = document.querySelector(aa).value;
+					var v = document.querySelector(vv).value;
+					var h = document.querySelector(hh).value;
+					var r = document.querySelector(rr).value;	
+					var o = document.querySelector(oo).value;}
+				  catch{
+				    alert('check if the questions in sample-'+i+' were finished.');
+					return false;
+				  }
+                  tmp_str += `${audio_path},${a},${v},${h},${r},${o},` ;		
+                  checked_list.push(`${aa}`);
+				  checked_list.push(`${vv}`);
+				  checked_list.push(`${hh}`);
+				  checked_list.push(`${rr}`);
+				  checked_list.push(`${oo}`);
+			  }
+			  
+			  for (let c in checked_list){
+				document.querySelector(checked_list[c]).checked = false;
+			  }
+			  
+			  answer_str += tmp_str;
+			  return true;		
+			}
+		   
+		   //end the test and send email
+		   function end() {
+		   const d = new Date();
+           var year = d.getFullYear();
+		   var month = d.getMonth();
+		   var day = d.getDate();
+		   var hours = d.getHours();
+		   var mins = d.getMinutes();
+		   var timestr = `${year}${month}${day}_${hours}${mins}`;
+		   
+			var templateParams = {
+				user_name: String(userName),
+				date: String(timestr),
+				content: String(answer_str)
+			};
+			const serviceID = 'service_gm2j5rn';
+			const templateID = 'template_lbuijiq';
+			emailjs.send(serviceID, templateID, templateParams)
+				.then(function (response) {
+					console.log('SUCCESS!', response.status, response.text);
+				}, function (error) {
+					console.log('FAILED...', error);
+				});
+			}
+			
+			
+			//update audio source and provide user information
+			function updateAudio(){
+				var flag = storeContent();
+				if (flag==true){
+					if (page_idx<1){ //idx<11
+						alert('剩餘'+(1-page_idx)+'頁；mp3已更換，請繼續回答......');
+						page_idx += 1;
+						audio_1 = model_folder[0]+audio_name[page_idx];
+						audio_2 = model_folder[1]+audio_name[page_idx];
+						audio_3 = model_folder[2]+audio_name[page_idx];
+						audio_4 = model_folder[3]+audio_name[page_idx];
+						audio_5 = model_folder[4]+audio_name[page_idx];
+						document.getElementById("audio-1").src = audio_1;
+						document.getElementById("audio-2").src = audio_2;
+						document.getElementById("audio-3").src = audio_3;			
+						document.getElementById("audio-4").src = audio_4;
+						document.getElementById("audio-5").src = audio_5;
+						if (page_idx==1){ //idx==11
+							document.getElementById("send").value = "最後一組，確認送出";
+						}
+					}else{
+						end();
+						page_idx = 0;
+						alert('測驗結束，謝謝配合!');
+					}
+			}
+			}
+			</script>
+</html>
