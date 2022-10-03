@@ -343,20 +343,14 @@
 			//document.getElementById("check_song").innerHTML = `${random_song_idx}`;
 
 			//random choose test model place
-			const audio_order = [];
-			var mcounter = 0;
-			while(mcounter<5){
-			    model_idx = Math.floor(Math.random()*5);
-				if (audio_order.includes(model_idx)==true){
-						continue;
-				}
-				else{
-				   audio_order.push(model_idx);
-				   model_folder.push(old_model_folder[model_idx]);
-				   mcounter+=1;
-				}
+			let numbers = [0, 1, 2, 3, 4];
+			let shuffledNumbers = numbers.sort(function () {
+			  return Math.random() - 0.5;
+			});
+			for (let i=0;i<5;i++){
+			    model_folder.push(old_model_folder[shuffledNumbers[i]]);
 			}
-			document.getElementById("check_song").innerHTML = `${model_folder}_${audio_order}`;
+			document.getElementById("check_song").innerHTML = `${model_folder}`;
 			
 			//complete audio name for audio display
 			const audio_name = [];
