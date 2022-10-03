@@ -317,14 +317,8 @@
 			</fieldset></div></fieldset></div><br>			
 
             <div class="top">
-			<label visibility="hidden" id="usname">姓名:</label><input type="hidden" id="username" name="姓名:">
-			<label visibility="hidden" id="ag">年齡:</label><input type="hidden" id="age" name="年齡:">
-			<input type="hidden" id="gender" name="性別" checked>
-			<label visibility="hidden" id="f"><input type="hidden" value="female" name="gender">女性</label>
-			<label visibility="hidden" id="other"><input type="hidden" value="others" name="gender">其他</label>
-			<label visibility="hidden" id="m"><input type="hidden" value="male" name="gender">男性</label>
+            <p id="info">---</p>	
             <input width=200 height=100 type="button" id="send" onclick=updateAudio() value="下一組">	
-            <p id="check_song">check song area</p>			
             </div>			
 
 			
@@ -354,7 +348,6 @@
 					}
 				song_counter+=1;
 			}
-			//document.getElementById("check_song").innerHTML = `${random_song_idx}`;
 
 			//random choose test model place
 			let numbers = [0, 1, 2, 3, 4];
@@ -364,7 +357,6 @@
 			for (let i=0;i<5;i++){
 			    model_folder.push(old_model_folder[shuffledNumbers[i]]);
 			}
-			//document.getElementById("check_song").innerHTML = `${model_folder}`;
 			
 			//complete audio name for audio display
 			const audio_name = [];
@@ -478,17 +470,7 @@
 						document.getElementById("audio-5").src = audio_5;
 						if (page_idx==1){ //idx==11
 							document.getElementById("send").value = "最後一組，確認送出";
-							document.getElementById("username").type = "text";
-							document.getElementById("age").type = "text";
-							document.getElementById("f").visibility = "visible";
-							document.getElementById("other").visibility = "visible";
-							document.getElementById("m").visibility = "visible";
-							document.getElementById("usname").visibility = "visible";
-							document.getElementById("ag").visibility = "visible";
-							var tmp = document.querySelector('input[name="gender"]');
-							for (j in tmp){
-							    tmp.type = "radio";
-							}
+							document.getElementById("info").innerHTML = '<label>姓名:</label><input type="text" id="username" name="姓名:"><label>年齡:</label><input type="text" id="age" name="年齡:"><label><input type="radio" value="female" name="gender">女性</label><label><input type="radio" value="others" name="gender" checked>其他</label><label><input type="radio" value="male" name="gender">男性</label>"';
 						}
 					}else{
 						end();
