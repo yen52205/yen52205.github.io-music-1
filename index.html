@@ -429,7 +429,7 @@
 				var flag = storeContent();
 				if (flag==true){
 					if (page_idx<1){ //idx<11
-						alert('更換mp3，原本='+ audio_name[page_idx]+' page_idx = '+page_idx);
+						alert('剩餘'+(1-page_idx)+'頁；mp3已更換，請繼續回答......');
 						page_idx += 1;
 						audio_1 = model_folder[0]+audio_name[page_idx];
 						audio_2 = model_folder[1]+audio_name[page_idx];
@@ -446,10 +446,9 @@
 						}
 						document.getElementById("store_content1").innerHTML = answer_str;
 					}else{
-						alert('跳轉儲存, page_idx = '+page_idx);
 						end();
-						document.getElementById("send").value = "下一組";
 						page_idx = 0;
+						alert('測驗結束，謝謝配合!');
 					}
 			}
 			}
