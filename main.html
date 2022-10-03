@@ -15,7 +15,6 @@
                           <title>情緒符號生成音樂主觀評比問卷</title>
 		     <style>
 			.left {
-			  border: 1px outset red;
 			  text-align: center;
 			  margin-top: 10px;
 			  display: inline-block;
@@ -24,7 +23,6 @@
 			  vertical-align: top;
 			}
 			.right{
-			  border: 1px outset red;
 			  text-align: center;
 			  margin-top: 10px;
 		      margin-left: 70px;
@@ -36,13 +34,15 @@
 		    .top{
 			  text-align: center;
 			  margin-top: 5px;
-			  width: 1270px;
+			  margin-left:50px;
+			  width: 1400px;
 			  vertical-align:top;
 			}
 		    .top2{
 			  text-align: center;
 			  margin-top: 10px;
-			  width: 1270px;
+			  margin-left:50px;
+			  width: 1400px;
 			  vertical-align:top;
 			}
 			.question{
@@ -60,9 +60,9 @@
 				<tbody>
 				<div class="top">
 				<h3>情緒符號音樂生成主觀評比問卷</h3>
-				</div>
+
 				<div class="left">
-				<h4>您好，感謝在百忙之中撥冗參加測試。</h4>
+				<h4>測試評分方式:</h4>
 				<h5>每頁測試會出現五首鋼琴音樂，請在確實聽完每首音樂後，並完成下方問題。</h5><br>
 				<h5>Arousal:情緒激動程度(1是最低，5是最高)</h5><br>
 				<h5>Valence:情緒正負面(1是越負面，5是越正面)</h5><br>
@@ -73,7 +73,7 @@
 				<div class="right" >
                 		<h4>valence-arousal參考圖:</h4><br>
 				<img style='height: 80%; width: 80%; object-fit: contain' src="https://github.com/yen52205/yen52205.github.io-music-1/blob/master/.assets/4Q.png?raw=true" alt="Valence-Arousal">				
-				</div>
+				</div></div>
 				
 			
             <div id="test-area">		
@@ -350,7 +350,7 @@
 			for (let i=0;i<5;i++){
 			    model_folder.push(old_model_folder[shuffledNumbers[i]]);
 			}
-			document.getElementById("check_song").innerHTML = `${model_folder}`;
+			//document.getElementById("check_song").innerHTML = `${model_folder}`;
 			
 			//complete audio name for audio display
 			const audio_name = [];
