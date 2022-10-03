@@ -332,7 +332,7 @@
 			    while(emo_counter<5){
 				    document.getElementById("check_song").innerHTML = `${random_song_idx}`;
 				    random_idx = Math.floor(Math.random()*250)+1;
-					random_choice = (4*random_song_idx-2)+emo_counter;
+					random_choice = (4*random_idx-2)+emo_counter;
 					if (random_song_idx.includes(random_choice)==true){
 					    continue;
 					}else{
