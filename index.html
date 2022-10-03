@@ -372,6 +372,7 @@
 			function storeContent(){
 			  var tmp_str = "";
 			  var audio_files = [audio_1,audio_2,audio_3,audio_4,audio_5];
+			  var checked_list = [];
 			  for (let i=1; i<6;i++){ 
 			      var query_name = ["arousal-"+i,"valence-"+i,"humanness-"+i,"richness-"+i,"overall-"+i]
 				  var audio_path = audio_files[i-1];
@@ -392,12 +393,17 @@
 					return false;
 				  }
                   tmp_str += `${audio_path},${a},${v},${h},${r},${o},` ;		
-				  document.querySelector(aa).checked = false;
-				  document.querySelector(vv).checked = false;
-				  document.querySelector(hh).checked = false;
-				  document.querySelector(rr).checked = false;
-				  document.querySelector(oo).checked = false;	
+                  checked_list.push(`${aa}`);
+				  checked_list.push(`${vv}`);
+				  checked_list.push(`${hh}`);
+				  checked_list.push(`${rr}`);
+				  checked_list.push(`${oo}`);
 			  }
+			  
+			  for (let c in checked_list){
+				document.querySelector(c).checked = false;
+			  }
+			  
 			  answer_str += tmp_str;
 			  return true;		
 			}
