@@ -32,8 +32,15 @@
 			  height:550px;
 			  vertical-align: top;
 			     }
-		    .top{
+			.topborder{
 			  border: 1px outset black;
+			  text-align: center;
+			  margin-top: 5px;
+			  margin-left:50px;
+			  width: 1400px;
+			  vertical-align:top;			
+			}
+		    .top{
 			  text-align: center;
 			  margin-top: 5px;
 			  margin-left:50px;
@@ -59,7 +66,7 @@
                             </head>
                               <body>
 				<tbody>
-				<div class="top">
+				<div class="topborder">
 				<h3>情緒符號音樂生成主觀評比問卷</h3>
 
 				<div class="left">
@@ -310,6 +317,7 @@
 			</fieldset></div></fieldset></div><br>			
 
             <div class="top">
+			<input >
             <input width=200 height=100 type="button" id="send" onclick=updateAudio() value="下一組">	
             <p id="check_song">check song area</p>			
             </div>			
@@ -376,7 +384,7 @@
 			
 			//store user choice into string
 			var userName = "default";
-			var answer_str= userName + "," + "audioName,arousal,valence,humanness,richness,overall,";
+			var answer_str= "audioName,arousal,valence,humanness,richness,overall,";
 			
 			function storeContent(){
 			  var tmp_str = "";
