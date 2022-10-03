@@ -2,6 +2,15 @@
 <html>
           <head>
 	<script type="text/javascript" src="test.js"></script>
+	<script
+	  type="text/javascript"
+	  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+	</script>
+	<script type="text/javascript">
+	  (function () {
+		emailjs.init('5zUHPTFpXOmSM2Eww');
+	  })();
+	</script>
                      <meta charset="utf-8">
                           <title>情緒符號生成音樂主觀評比問卷</title>
 		     <style>
@@ -304,6 +313,8 @@
             </div>			
             <button onclick="display(1)">1</button>
 			
+			<p id="store_content1">show store content here.</p>
+			
 	        </div>
 </body>
             <script>
@@ -340,7 +351,6 @@
 			for (let i=0;i<12;i++){
 			   emo = (random_song_idx[i]+1)%4+1;
 			   audio_name.push('emo_'+emo+'_song_'+random_song_idx[i]+'.mp3');
-			
 			}
 			
 			var page_idx = 0;
@@ -356,7 +366,21 @@
 			document.getElementById("audio-4").src = audio_4;
 			document.getElementById("audio-5").src = audio_5;
 			
-
+			var userName = "default";
+			var answer_str= "";
+			
+			function storeContent(){
+			  answer_str = userName + "," + "audioName,arousal,valence,humanness,richness,overall,";
+			  for (let i=1; i<6;i++){ 
+				  var audio_path = document.getElementById("audio-${i}").src;
+				  var a = document.querySelector('input[name="arousal-${i}"]:checked').value;
+				  var v = document.querySelector('input[name="valence-${i}"]:checked').value;
+                  var h = document.querySelector('input[name="humanness-${i}"]:checked').value;
+                  var r = document.querySelector('input[name="richness-${i}"]:checked').value;	
+                  var o = document.querySelector('input[name="overall-${i}"]:checked').value;	
+                  answer_str += "${audio_path},${a},${v},${h},${r},${o}," ;				  
+			  }
+			}
 			
 			function updateAudio(){
 			    if (page_idx<11){
@@ -375,6 +399,8 @@
 					if (page_idx==11){
 					    document.getElementById("send").value = "最後一組，確認送出";
 					}
+					storeContent();
+					document.getElementById("store_content1").innerHTML = answer_str;
 				}else{
 					alert('跳轉儲存, page_idx = '+page_idx);
 					document.getElementById("send").value = "下一組";
