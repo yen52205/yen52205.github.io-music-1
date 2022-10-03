@@ -309,30 +309,42 @@
 			</fieldset></div></fieldset></div><br>			
 
             <div class="top">
-            <input width=200 height=100 type="button" id="send" onclick=updateAudio() value="下一組">		
+            <input width=200 height=100 type="button" id="send" onclick=updateAudio() value="下一組">	
+            <p id="check_song">check song area</p>			
             </div>			
 
 			
 	        </div>
 </body>
             <script>
+			//model folder
 			const model_folder = ["https://raw.githubusercontent.com/yen52205/music_content/master/pretrained_transformer_renamed/",
 			                      "https://raw.githubusercontent.com/yen52205/music_content/master/0925_generated_songs_1200-2/",
 								  "https://raw.githubusercontent.com/yen52205/music_content/master/model_8_renamed/",
 								  "https://raw.githubusercontent.com/yen52205/music_content/master/model_3_renamed/",
 								  "https://raw.githubusercontent.com/yen52205/music_content/master/model_25_renamed/"];
-								  
-			const random_song_idx = [];
-			for (let i=0;i<12;i++){
-			     random_idx = Math.floor(Math.random() * 1000) + 1;
-				 if (random_song_idx.includes(random_idx)==true){
-				     continue;
-				 }
-				 else{
-				   random_song_idx.push(random_idx);
-				 }
-			}
 			
+			//select 12 song idx	  
+			const random_song_idx = [];
+			var emo_counter = 1;
+			var song_counter = 0;
+			while(song_counter<3){
+			    while(emo_counter<5){
+				    random_idx = Math.floor(Math.random()*250)+1;
+					random_choice = (4*random_song_idx-2)+emo_counter;
+					if (random_song_idx.includes(random_choice)==true){
+					    continue;
+					}else{
+					    random_song_idx.push(random_choice);
+					    emo_counter += 1;
+					}
+				}
+			    emo_counter = 1;
+				song_counter+=1;
+			}
+			document.getElementById("check_song").innerHTML = `${random_song_idx}`;
+
+			//random model place
 			const audio_order = [];
 			for (let i=0; i<5;i++){
 			    model_idx = Math.floor(Math.random()*5);
@@ -344,6 +356,7 @@
 				}
 			}
 			
+			//complete audio name for audio display
 			const audio_name = [];
 			var emo = 0;
 			for (let i=0;i<12;i++){
@@ -364,6 +377,7 @@
 			document.getElementById("audio-4").src = audio_4;
 			document.getElementById("audio-5").src = audio_5;
 			
+			//store user choice into string
 			var userName = "default";
 			var answer_str= userName + "," + "audioName,arousal,valence,humanness,richness,overall,";
 			
@@ -405,6 +419,7 @@
 			  return true;		
 			}
 		   
+		   //end the test and send email
 		   function end() {
 			var templateParams = {
 				user_name: String(userName),
@@ -422,11 +437,12 @@
 			}
 			
 			
+			//update audio source and provide user information
 			function updateAudio(){
 				var flag = storeContent();
 				if (flag==true){
-					if (page_idx<2){ //idx<11
-						alert('剩餘'+(2-page_idx)+'頁；mp3已更換，請繼續回答......');
+					if (page_idx<1){ //idx<11
+						alert('剩餘'+(1-page_idx)+'頁；mp3已更換，請繼續回答......');
 						page_idx += 1;
 						audio_1 = model_folder[0]+audio_name[page_idx];
 						audio_2 = model_folder[1]+audio_name[page_idx];
@@ -438,7 +454,7 @@
 						document.getElementById("audio-3").src = audio_3;			
 						document.getElementById("audio-4").src = audio_4;
 						document.getElementById("audio-5").src = audio_5;
-						if (page_idx==2){ //idx==11
+						if (page_idx==1){ //idx==11
 							document.getElementById("send").value = "最後一組，確認送出";
 						}
 					}else{
