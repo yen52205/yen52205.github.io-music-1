@@ -374,12 +374,12 @@
 			  var audio_files = [audio_1,audio_2,audio_3,audio_4,audio_5];
 			  for (let i=1; i<6;i++){ 
 				  var audio_path = audio_files[i-1];
-				  var a = document.querySelector('input[name="arousal-${i}"]:checked').value;
-				  var v = document.querySelector('input[name="valence-${i}"]:checked').value;
-                  var h = document.querySelector('input[name="humanness-${i}"]:checked').value;
-                  var r = document.querySelector('input[name="richness-${i}"]:checked').value;	
-                  var o = document.querySelector('input[name="overall-${i}"]:checked').value;	
-                  answer_str += "${audio_path},${a},${v},${h},${r},${o}," ;				  
+				  var a = document.querySelector('input[name=\'arousal-${i}\']:checked').value;
+				  var v = document.querySelector('input[name=\'valence-${i}\']:checked').value;
+                  var h = document.querySelector('input[name=\'humanness-${i}\']:checked').value;
+                  var r = document.querySelector('input[name=\'richness-${i}\']:checked').value;	
+                  var o = document.querySelector('input[name=\'overall-${i}\']:checked').value;	
+                  answer_str += '${audio_path},${a},${v},${h},${r},${o},' ;				  
 			  }
 			}
 			
