@@ -320,9 +320,9 @@
 			<input type="hidden" id="username" name="姓名:">
 			<input type="hidden" id="age" name="年齡:">
 			<input type="hidden" id="gender" name="性別" checked>
-			<label for="female">女性</label>
-			<label for="others">其他</label>
-			<label for="male">男性</label>
+			<label><input type="hidden" value="female" name="gender">女性</label>
+			<label><input type="hidden" value="others" name="gender">其他</label>
+			<label><input type="hidden" value="male" name="gender">男性</label>
             <input width=200 height=100 type="button" id="send" onclick=updateAudio() value="下一組">	
             <p id="check_song">check song area</p>			
             </div>			
@@ -480,7 +480,10 @@
 							document.getElementById("send").value = "最後一組，確認送出";
 							document.getElementById("username").type = "text";
 							document.getElementById("age").type = "text";
-							document.getElementById("gender").type = "checkbox";
+							var tmp = document.querySelector('input[name="gender"]');
+							for (j in tmp){
+							    tmp.type = "radio";
+							}
 						}
 					}else{
 						end();
