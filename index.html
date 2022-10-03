@@ -373,8 +373,9 @@
 			  answer_str = userName + "," + "audioName,arousal,valence,humanness,richness,overall,";
 			  var audio_files = [audio_1,audio_2,audio_3,audio_4,audio_5];
 			  for (let i=1; i<6;i++){ 
+			      var query_name = ["arousal-"+i,"valence-"+i,"humanness-"+i,"richness-"+i,"overall-"+i]
 				  var audio_path = audio_files[i-1];
-				  var aa = 'input[name=${aa}]:checked';
+				  var aa = 'input[name="'+'${query_name[0]}'+'"]:checked';
 				  var vv = 'input[name=${vv}]:checked';
 				  var hh = "humanness-"+i;
 				  var rr = "richness-"+i;
