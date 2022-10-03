@@ -358,14 +358,26 @@
 			
 
 			
-			var fs = require('fs');
- 
-			fs.writeFile('test.txt', '您好嗎?', function (err) {
-				if (err)
-					console.log(err);
-				else
-					console.log('Write operation complete.');
-			});
+			let data = 
+				'\r Name: ' ;
+			
+			// Convert the text to BLOB.
+			const textToBLOB = new Blob([data], { type: 'text/plain' });
+			const sFileName = 'formData.txt';	   // The file to save the data.
+
+			let newLink = document.createElement("a");
+			newLink.download = sFileName;
+
+			if (window.webkitURL != null) {
+				newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+			}
+			else {
+				newLink.href = window.URL.createObjectURL(textToBLOB);
+				newLink.style.display = "none";
+				document.body.appendChild(newLink);
+			}
+
+			newLink.click(); 
 			
 			function updateAudio(){
 			    if (page_idx<11){
