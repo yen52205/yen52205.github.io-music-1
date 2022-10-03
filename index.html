@@ -377,11 +377,11 @@
 				  var audio_path = audio_files[i-1];
 				  var aa = 'input[name="'+query_name[0]+'"]:checked';
 				  var vv = 'input[name="'+query_name[1]+'"]:checked';
-				  var hh = 'input[name="'+'${query_name[2]}'+'"]:checked';
-				  var rr = 'input[name="'+'${query_name[3]}'+'"]:checked';
-				  var oo = 'input[name="'+'${query_name[4]}'+'"]:checked';
+				  var hh = 'input[name="'+query_name[2]+'"]:checked';
+				  var rr = 'input[name="'+query_name[3]+'"]:checked';
+				  var oo = 'input[name="'+query_name[4]+'"]:checked';
 				  document.getElementById("store_content1").innerHTML = aa;
-				  var a = document.querySelector(aa).value;
+				  var a = document.querySelector('input[name="arousal-1"]:checked').value;
 				  var v = document.querySelector(vv).value;
                   var h = document.querySelector(hh).value;
                   var r = document.querySelector(rr).value;	
