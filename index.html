@@ -313,7 +313,7 @@
             </div>			
             <button onclick="display(1)">1</button>
 			
-	    <p id="store_content1">show store content here.</p>
+			<p id="store_content1">show store content here.</p>
 			
 	        </div>
 </body>
@@ -371,8 +371,9 @@
 			
 			function storeContent(){
 			  answer_str = userName + "," + "audioName,arousal,valence,humanness,richness,overall,";
+			  var audio_files = [audio_1,audio_2,audio_3,audio_4,audio_5];
 			  for (let i=1; i<6;i++){ 
-				  var audio_path = document.getElementById("audio-${i}").src;
+				  var audio_path = audio_files[i-1];
 				  var a = document.querySelector('input[name="arousal-${i}"]:checked').value;
 				  var v = document.querySelector('input[name="valence-${i}"]:checked').value;
                   var h = document.querySelector('input[name="humanness-${i}"]:checked').value;
