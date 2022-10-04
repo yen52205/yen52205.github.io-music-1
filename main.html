@@ -439,6 +439,8 @@
 			  for (let i=1; i<7;i++){ 
 			      var query_name = ["arousal-"+i,"valence-"+i,"humanness-"+i,"richness-"+i,"overall-"+i]
 				  var audio_path = audio_files[i-1];
+				  if (i==7){
+				  alert("audio_files[5] = ",audio_path);}
 				  var aa = 'input[name="'+query_name[0]+'"]:checked';
 				  var vv = 'input[name="'+query_name[1]+'"]:checked';
 				  var hh = 'input[name="'+query_name[2]+'"]:checked';
