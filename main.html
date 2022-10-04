@@ -316,6 +316,52 @@
 			<label><input type="radio" value=5 name="overall-5">5</label>
 			</fieldset></div></fieldset></div><br>			
 
+            <div class="top2">
+			<fieldset id="sample6">
+			<legend>Sample-6</legend>
+            <div class="top">
+			<h3><audio preload="auto" id="audio-6" src="https://raw.githubusercontent.com/yen52205/music_content/master/0925_generated_songs_1200-2/emo_1_song_219.mp3" controls>Loading...</audio></h3> 
+			</div><div class="question"><fieldset id="arousal6">
+			<legend>Arousal</legend>
+			<label><input type="radio" value=1 name="arousal-6">1</label>
+			<label><input type="radio" value=2 name="arousal-6">2</label>
+			<label><input type="radio" value=3 name="arousal-6">3</label>
+			<label><input type="radio" value=4 name="arousal-6">4</label>
+			<label><input type="radio" value=5 name="arousal-6">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="valence6">
+			<legend>Valence</legend>
+			<label><input type="radio" value=1 name="valence-6">1</label>
+			<label><input type="radio" value=2 name="valence-6">2</label>
+			<label><input type="radio" value=3 name="valence-6">3</label>
+			<label><input type="radio" value=4 name="valence-6">4</label>
+			<label><input type="radio" value=5 name="valence-6">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="humanness6">
+			<legend>Humanness</legend>
+			<label><input type="radio" value=1 name="humanness-6">1</label>
+			<label><input type="radio" value=2 name="humanness-6">2</label>
+			<label><input type="radio" value=3 name="humanness-6">3</label>
+			<label><input type="radio" value=4 name="humanness-6">4</label>
+			<label><input type="radio" value=5 name="humanness-6">5</label>
+			</fieldset></div>
+			<div class="question"><fieldset id="richness6">
+			<legend>Richness</legend>
+			<label><input type="radio" value=1 name="richness-6">1</label>
+			<label><input type="radio" value=2 name="richness-6">2</label>
+			<label><input type="radio" value=3 name="richness-6">3</label>
+			<label><input type="radio" value=4 name="richness-6">4</label>
+			<label><input type="radio" value=5 name="richness-6">5</label>
+			</fieldset></div>			
+			<div class="question"><fieldset id="overall6">
+			<legend>Overall Music Quality</legend>
+			<label><input type="radio" value=1 name="overall-6">1</label>
+			<label><input type="radio" value=2 name="overall-6">2</label>
+			<label><input type="radio" value=3 name="overall-6">3</label>
+			<label><input type="radio" value=4 name="overall-6">4</label>
+			<label><input type="radio" value=5 name="overall-6">5</label>
+			</fieldset></div></fieldset></div><br>
+
             <div class="top">
             <p id="info">---</p>	
             <input width=200 height=100 type="button" id="send" onclick=updateAudio() value="下一組">	
@@ -330,7 +376,8 @@
 			                      "https://raw.githubusercontent.com/yen52205/music_content/master/0927_generated_songs_1200-6/",
 								  "https://raw.githubusercontent.com/yen52205/music_content/master/model_8_renamed/",
 								  "https://raw.githubusercontent.com/yen52205/music_content/master/model_3_renamed/",
-								  "https://raw.githubusercontent.com/yen52205/music_content/master/model_25_renamed/"];
+								  "https://raw.githubusercontent.com/yen52205/music_content/master/model_25_renamed/",
+								  "https://raw.githubusercontent.com/yen52205/music_content/master/0925_generated_songs_1200-2/"];
 			var model_folder = [];
 			//select 12 song idx	  
 			const random_song_idx = [];
@@ -350,11 +397,11 @@
 			}
 
 			//random choose test model place
-			let numbers = [0, 1, 2, 3, 4];
+			let numbers = [0, 1, 2, 3, 4, 5];
 			let shuffledNumbers = numbers.sort(function () {
 			  return Math.random() - 0.5;
 			});
-			for (let i=0;i<5;i++){
+			for (let i=0;i<6;i++){
 			    model_folder.push(old_model_folder[shuffledNumbers[i]]);
 			}
 			
@@ -372,21 +419,23 @@
 			var audio_3 = model_folder[2]+audio_name[page_idx];
 			var audio_4 = model_folder[3]+audio_name[page_idx];
 			var audio_5 = model_folder[4]+audio_name[page_idx];
+			var audio_6 = model_folder[5]+audio_name[page_idx];
 			
 			document.getElementById("audio-1").src = audio_1;
 			document.getElementById("audio-2").src = audio_2;
 			document.getElementById("audio-3").src = audio_3;			
 			document.getElementById("audio-4").src = audio_4;
 			document.getElementById("audio-5").src = audio_5;
+			document.getElementById("audio-6").src = audio_6;
 			
 			//store user choice into string
 			var answer_str= "audioName,arousal,valence,humanness,richness,overall,";
 			
 			function storeContent(){
 			  var tmp_str = "";
-			  var audio_files = [audio_1,audio_2,audio_3,audio_4,audio_5];
+			  var audio_files = [audio_1,audio_2,audio_3,audio_4,audio_5,,audio_6];
 			  var checked_list = [];
-			  for (let i=1; i<6;i++){ 
+			  for (let i=1; i<7;i++){ 
 			      var query_name = ["arousal-"+i,"valence-"+i,"humanness-"+i,"richness-"+i,"overall-"+i]
 				  var audio_path = audio_files[i-1];
 				  var aa = 'input[name="'+query_name[0]+'"]:checked';
@@ -463,11 +512,13 @@
 						audio_3 = model_folder[2]+audio_name[page_idx];
 						audio_4 = model_folder[3]+audio_name[page_idx];
 						audio_5 = model_folder[4]+audio_name[page_idx];
+						audio_6 = model_folder[5]+audio_name[page_idx];
 						document.getElementById("audio-1").src = audio_1;
 						document.getElementById("audio-2").src = audio_2;
 						document.getElementById("audio-3").src = audio_3;			
 						document.getElementById("audio-4").src = audio_4;
 						document.getElementById("audio-5").src = audio_5;
+						document.getElementById("audio-6").src = audio_6;
 						if (page_idx==11){ //idx==11
 							document.getElementById("send").value = "最後一組，確認送出";
 							document.getElementById("info").innerHTML = '<label>姓名:</label><input type="text" id="username" name="姓名:"><label>年齡:</label><input type="text" id="age" name="年齡:"><label><input type="radio" value="female" name="gender">女性</label><label><input type="radio" value="others" name="gender" checked>其他</label><label><input type="radio" value="male" name="gender">男性</label>"';
