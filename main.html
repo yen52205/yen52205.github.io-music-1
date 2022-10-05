@@ -508,6 +508,9 @@
 					if (page_idx<3){ //idx<11
 						alert('剩餘'+(3-page_idx)+'頁；請繼續回答......');
 						model_folder = [];
+						let shuffledNumbers = numbers.sort(function () {
+						  return Math.random() - 0.5;
+						});
 						for (let i=0;i<6;i++){
 			    				model_folder.push(old_model_folder[shuffledNumbers[i]]);
 						}
