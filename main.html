@@ -507,6 +507,10 @@
 				if (flag==true){
 					if (page_idx<3){ //idx<11
 						alert('剩餘'+(3-page_idx)+'頁；請繼續回答......');
+						model_folder = [];
+						for (let i=0;i<6;i++){
+			    				model_folder.push(old_model_folder[shuffledNumbers[i]]);
+						}
 						page_idx += 1;
 						audio_1 = model_folder[0]+audio_name[page_idx];
 						audio_2 = model_folder[1]+audio_name[page_idx];
