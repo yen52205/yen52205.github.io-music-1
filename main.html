@@ -54,7 +54,7 @@
 			  width: 1400px;
 			  vertical-align:top;
 			}
-			.question{
+		   .question{
 			  text-align: center;
 			  width: 220px;
 			  margin-top: 5px;
@@ -62,6 +62,24 @@
 			  display: inline-block;
 			  vertical-align: top;
 			}
+		   .progressbefore{
+			  border: 3px double black;
+			  text-align: center;
+			  width: 200px;
+			  margin-top: 5px;
+			  margin-left: 20px;
+			  display: inline-block;
+			  vertical-align: top;
+			}
+		   .progressafter{
+			  border: 3px solid blue;
+			  text-align: center;
+			  width: 200px;
+			  margin-top: 5px;
+			  margin-left: 20px;
+			  display: inline-block;
+			  vertical-align: top;
+			}			     
 		     </style>
 		  
                             </head>
@@ -85,7 +103,17 @@
 				</div></div>
 				
 			
-            <div>		
+            <div>
+            <div class="top">
+		    <hr id="pg1" style="progressafter" width="100%" SIZE=3>
+		    <hr id="pg2" style="progressbefore" width="100%" SIZE=3>
+		    <hr id="pg3" style="progressbefore" width="100%" SIZE=3>
+		    <hr id="pg4" style="progressbefore" width="100%" SIZE=3>            
+	    </div> 
+	    <div class="top">
+	            <p>1<-測驗進度->4<p>
+            </div>		    
+		    
             <form>
 			<div class="top2">
 			<fieldset id="sample1">
@@ -580,6 +608,8 @@
 						document.getElementById("audio-5").src = audio_5;
 						document.getElementById("audio-6").src = audio_6;
 						document.getElementById("audio-7").src = audio_7;
+						
+						document.getElementById("pg"+page_idx+1).style = "progressafter" ;
 						if (page_idx==3){ //idx==11
 							document.getElementById("send").value = "最後一組，確認送出";
 							document.getElementById("info").innerHTML = '<label>姓名:</label><input type="text" id="username" name="姓名:"><label>年齡:</label><input type="text" id="age" name="年齡:"><label><input type="radio" value="female" name="gender">女性</label><label><input type="radio" value="others" name="gender" checked>其他</label><label><input type="radio" value="male" name="gender">男性</label>';
