@@ -117,7 +117,6 @@
 	            <label class="question">第2頁</label>
 	            <label class="question">第3頁</label>
 	            <label class="question">第4頁</label>
-		    <label id="page_mark" class="question">page mark</label>
             </div>		    
 		    
             <form>
@@ -617,7 +616,7 @@
 						
 						document.getElementById("page_mark").innerHTML = "pg"+(page_idx+1) ;
 						
-						document.getElementById("pg"+(page_idx+1)).class = "progressafter" ;
+						document.getElementById("pg"+(page_idx+1)).className = "progressafter" ;
 						if (page_idx==3){ //idx==11
 							document.getElementById("send").value = "最後一組，確認送出";
 							document.getElementById("info").innerHTML = '<label>姓名:</label><input type="text" id="username" name="姓名:"><label>年齡:</label><input type="text" id="age" name="年齡:"><label><input type="radio" value="female" name="gender">女性</label><label><input type="radio" value="others" name="gender" checked>其他</label><label><input type="radio" value="male" name="gender">男性</label>';
